@@ -1,15 +1,23 @@
 <template>
-  <header>
-      
+  <header class="py-3 px-4">
+      <Logo />
   </header>
 </template>
 
 <script>
-export default {
+import Logo from './LogoComponent.vue'
 
+export default {
+    name:'HeaderComponent',
+    components:{
+        Logo
+    }
 }
 </script>
 
-<style>
 
+<style lang="scss" scoped>
+header{
+    background-color: $bgHeader;
+}
 </style>
