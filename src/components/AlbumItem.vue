@@ -1,6 +1,6 @@
 <template>
   <div class="col">
-    <div class="card_disco text-center p-4">
+    <div class="card_album text-center p-4">
       <div class="img">
         <img :src="album.poster" :alt="album.title" />
       </div>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card_disco{
+.card_album{
     background-color: $bgHeader;
     height: 100%;
     img{

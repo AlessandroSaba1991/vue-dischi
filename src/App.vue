@@ -6,19 +6,18 @@
 </template>
 
 <script>
-import SiteHeader from './components/HeaderComponent.vue'
-import SiteMain from './components/MainComponent.vue'
-
+import SiteHeader from "./components/HeaderComponent.vue";
+import SiteMain from "./components/MainComponent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-   SiteHeader,
-   SiteMain
-  }
-}
+    SiteHeader,
+    SiteMain,
+  },
+};
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/style';
+@import "@/assets/scss/style";
 </style>
