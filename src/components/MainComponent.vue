@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  height: calc(100vh - 72px);
+  height: calc(100vh - 90px);
   background-color: $bgMain;
   overflow: auto;
 }

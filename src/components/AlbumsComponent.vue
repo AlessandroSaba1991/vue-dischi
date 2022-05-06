@@ -38,13 +38,14 @@ export default {
   },
   computed: {
     filtered() {
-      if(state.selectGenere != 'All'){
-        console.log(state.selectGenere);
-        return this.albums.filter(album => album.genre === state.selectGenere)
-        
+      if (state.selectGenere != "" && state.selectAuthor != "") {
+        return this.albums.filter(album => album.genre === state.selectGenere && album.author === state.selectAuthor);
+      } else if (state.selectGenere != "") {
+        return this.albums.filter(album => album.genre === state.selectGenere);
+      } else if (state.selectAuthor != "") {
+        return this.albums.filter(album => album.author === state.selectAuthor);
       } else {
-        console.log(state.selectGenere);
-        return this.albums
+        return this.albums;
       }
     },
   },

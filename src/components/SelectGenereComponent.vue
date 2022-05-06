@@ -8,22 +8,25 @@
       @input="$emit('input', $event.target.value)"
       @change="$emit('selectGenere')"
     >
-      <option>All</option>
+      <option value="" selected>All</option>
       <option>Rock</option>
-      <option>Jazz</option>
       <option>Pop</option>
       <option>Metal</option>
+      <option>Jazz</option>
+
+      
     </select>
     
   </div>
 </template>
 
 <script>
+
 export default {
-  name: "SelectComponent",
+  name: "SelectGenereComponent",
   props: {
     typeGenere: String,
-  },
+  } 
 };
 </script>
 
