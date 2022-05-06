@@ -45,6 +45,7 @@ export default {
       } else if (state.selectAuthor != "") {
         return this.albums.filter(album => album.author === state.selectAuthor);
       } else {
+        state.Albums = this.albums
         return this.albums;
       }
     },
