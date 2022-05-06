@@ -1,8 +1,15 @@
 <template>
   <section v-if="!loading" class="albums py-3">
     <div class="container">
-      <div class="row gy-4 gx-5 row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xxl-5">
-        <Album :album="album" v-for="(album, index) in albums" :key="index" />
+      <div
+        class="
+          row
+          gy-4
+          gx-5
+          row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xxl-5
+        "
+      >
+        <Album :album="album" v-for="(album, index) in filtered" :key="index" />
       </div>
     </div>
   </section>
@@ -13,6 +20,7 @@
 import axios from "axios";
 import Album from "./AlbumItem.vue";
 import Loading from "./LoadingComponent.vue";
+import state from "@/state";
 
 export default {
   name: "AlbumsComponent",
@@ -20,7 +28,6 @@ export default {
     Album,
     Loading,
   },
-
   data() {
     return {
       API_URL: "https://flynn.boolean.careers/exercises/api/array/music",
@@ -28,6 +35,18 @@ export default {
       error: null,
       loading: true,
     };
+  },
+  computed: {
+    filtered() {
+      if(state.selectGenere != 'All'){
+        console.log(state.selectGenere);
+        return this.albums.filter(album => album.genre === state.selectGenere)
+        
+      } else {
+        console.log(state.selectGenere);
+        return this.albums
+      }
+    },
   },
   methods: {
     APICall() {

@@ -1,16 +1,30 @@
 <template>
-  <header class="py-3 px-4">
+  <header class="d-flex py-3 px-4">
       <Logo />
+      <Select v-model="typeGenere" @selectGenere="selectGenere"/>
   </header>
 </template>
 
 <script>
 import Logo from './LogoComponent.vue'
+import Select from './SelectComponent.vue'
+import state from '@/state'
 
 export default {
     name:'HeaderComponent',
     components:{
-        Logo
+        Logo,
+        Select
+    },
+    data(){
+        return{
+            typeGenere:''
+        }
+    },
+    methods:{
+        selectGenere(){
+            state.selectGenere = this.typeGenere;
+        }
     }
 }
 </script>
@@ -19,5 +33,7 @@ export default {
 <style lang="scss" scoped>
 header{
     background-color: $bgHeader;
+    justify-content: space-between;
+    align-items: center;
 }
 </style>
